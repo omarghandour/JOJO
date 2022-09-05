@@ -4,6 +4,8 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    text-decoration: none;
+    list-style: none;
 }
 
 html {
@@ -19,35 +21,7 @@ ul {
     list-style: none;
 }
 
-.container {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    top: 15px;
-    border-radius: 10px;
-}
 
-/* Small */
-@media (min-width: 768px) {
-    .container {
-        width: 750px;
-    }
-}
-
-/* Medium */
-@media (min-width: 992px) {
-    .container {
-        width: 970px;
-    }
-}
-
-/* Large */
-@media (min-width: 1200px) {
-    .container {
-        width: 1170px;
-    }
-}
 
 /* End Global Rules */
 /* Start Header */
@@ -58,14 +32,18 @@ header {
     z-index: 2;
 }
 
+
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
     min-height: 40px;
-    width: 1110px;
+    width: 85%;
     background-color: rgb(168 226 126);
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 10px auto;
+    border-radius: 10px;
 }
 
 header .container .logo .text {
@@ -83,10 +61,7 @@ header nav {
 
 
 header nav ul {
-    position: absolute;
     display: flex;
-    left: 590px;
-    width: 318px;
     height: 27px;
     align-items: center;
 }
@@ -106,8 +81,11 @@ header nav ul li a {
     transition: 0.3s;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    padding: 30px 25px;
+    font-size: 20px;
+}
+
+header nav ul li {
+    margin: 10px;
 }
 
 header nav .icon i {
@@ -115,23 +93,15 @@ header nav .icon i {
     color: black;
 }
 
-@media (max-width: 767px) {
-    header .container {
-        width: 600px;
-        left: 6%;
-
+@media (max-width: 768px) {
+    header nav .icon {
+        display: none
     }
 
-    header nav ul {
-        left: 325px;
-    }
-
-    header nav ul li a {
-        font-size: 18px;
-        padding: 3px 9px;
-    }
-
-    header .icon {
+    header nav .shop,
+    header nav .fa {
         display: none;
     }
+
+
 }
