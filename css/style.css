@@ -1,3 +1,7 @@
+:root {
+    --main-color: rgb(168 226 126);
+}
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -17,6 +21,8 @@ body {
     background-color: white;
 }
 
+
+
 ul {
     list-style: none;
 }
@@ -26,7 +32,7 @@ ul {
 /* End Global Rules */
 /* Start Header */
 header {
-    position: absolute;
+    position: relative;
     left: 0;
     width: 100%;
     z-index: 2;
@@ -39,11 +45,12 @@ header .container {
     align-items: center;
     min-height: 40px;
     width: 85%;
-    background-color: rgb(168 226 126);
+    background-color: var(--main-color);
     padding-left: 15px;
     padding-right: 15px;
     margin: 10px auto;
     border-radius: 10px;
+    margin-bottom: 0;
 }
 
 header .container .logo .text {
@@ -85,6 +92,8 @@ header nav ul li a {
     font-size: 20px;
 }
 
+
+
 header nav ul li {
     margin: 10px;
 }
@@ -94,9 +103,9 @@ header nav .icon i {
     color: black;
 }
 
+header .links {}
 
-
-@media (max-width: 768px) {
+@media (min-width:100px) and (max-width: 768px) {
     header nav .icon {
         display: none
     }
@@ -149,6 +158,7 @@ header nav .icon i {
         top: calc(100% + 15px);
         display: none;
         z-index: 1;
+        height: 110px;
     }
 
     header .links ul::before {
@@ -186,4 +196,134 @@ header nav .icon i {
     header nav ul::after {
         display: none;
     }
+
+
 }
+
+
+
+/* start top-home  */
+.top-home .container button {
+    z-index: 1;
+    position: relative;
+    font-size: inherit;
+    font-family: inherit;
+    color: white;
+    padding: 0.5em 1em;
+    outline: none;
+    border: 1px solid white;
+    background-color: hsl(328deg 95% 43% / 0%);
+    overflow: hidden;
+    transition: color 0.4s ease-in-out;
+    border-radius: 6px;
+}
+
+.top-home .container button::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: hsl(328, 95%, 43%);
+    transform-origin: center;
+    transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+    transition: transform 0.45s ease-in-out;
+}
+
+.top-home .container button:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.top-home .container button:hover::before {
+    transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
+}
+
+.top-home .container button a {
+    font-weight: bold;
+    background-color: rgb(168 226 126 / 60%);
+    color: black;
+    padding: 15px;
+    border-radius: 6px;
+    position: absolute;
+    left: 8px;
+    top: 0px;
+}
+
+.top-home {
+    margin-top: 10px;
+}
+
+.top-home .container {}
+
+
+.top-home .container .ph1 {
+    display: flex;
+    justify-content: center;
+
+}
+
+.top-home .container img {
+    width: 1248px;
+    height: 646px;
+}
+
+.top-home .container button {
+    position: absolute;
+    width: 125px;
+    height: 50px;
+    left: 155px;
+    top: 450px;
+}
+
+.top-home .container .text {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 395px;
+    height: 94px;
+    left: 155px;
+    top: 348px;
+    justify-content: space-between;
+    border-radius: 6px;
+    color: black;
+}
+
+.top-home .container .text h1 {
+    width: 250px;
+    height: 43px;
+    margin: 0;
+    background-color: rgb(168 226 126 / 60%);
+    padding-left: 35px;
+    border-radius: 6px;
+}
+
+.top-home .container .text h2 {
+    width: 200px;
+    height: 43px;
+    margin: 0;
+    background-color: rgb(168 226 126 / 60%);
+    padding-left: 35px;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+
+
+}
+
+@media (min-width:100px) and (max-width: 768px) {
+    .top-home .container .text {
+        left: 20px;
+
+    }
+
+    .top-home .container button {
+        left: 20px;
+
+    }
+}
+
+/* end top-home */
